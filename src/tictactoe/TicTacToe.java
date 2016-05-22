@@ -307,9 +307,97 @@ public class TicTacToe extends Application {
                     OWins();
                     return OWin = true;
                 }
-            } //else if()
-            
-        } //else if()
+            }else if(matrix[0][1].equals("X")){
+                matrix[2][1] = "O";
+                button8.setText("O");
+                if(matrix[1][0].equals("X")){
+                    matrix[1][2] = "O";
+                    button6.setText("O");
+                    if(matrix[2][0].equals("X")){
+                        matrix[0][2] = "O";
+                        button3.setText("O");
+                        button9.setText("X");
+                        draw();
+                        return draw = true;
+                    }else if(matrix[0][2].equals("X")){
+                        matrix[2][0] = "O";
+                        button7.setText("O");
+                        button9.setText("X");
+                        draw();
+                        return draw = true;
+                    }else if(matrix[2][2].equals("X")){
+                        matrix[2][0] = "O";
+                        button7.setText("O");
+                        button3.setText("X");
+                        draw();
+                        return draw = true;
+                    }
+                }else if(matrix[0][2].equals("X")){
+                    matrix[2][0] = "O";
+                    button7.setText("O");
+                    if(matrix[1][0].equals("X")){
+                        matrix[1][2] = "O";
+                        button6.setText("O");
+                        button9.setText("X");
+                        draw();
+                        return draw = true;
+                    }else if(matrix[1][2].equals("X")){
+                        matrix[1][0] = "O";
+                        button4.setText("O");
+                        OWins();
+                        return OWin = true;
+                    }else if(matrix[2][2].equals("X")){
+                        matrix[1][0] = "O";
+                        button4.setText("O");
+                        OWins();
+                        return OWin = true;
+                    }
+                }else if(matrix[1][2].equals("X")){
+                    button4.setText("O");
+                    matrix[1][0] = "O";
+                    
+                    if(matrix[2][0].equals("X")){
+                        matrix[0][2] = "O";
+                        button3.setText("O");
+                        button9.setText("X");
+                        draw();
+                        return draw = true;
+                    }else if(matrix[0][2].equals("X")){
+                        matrix[2][0] = "O";
+                        button7.setText("O");
+                        OWins();
+                        return OWin = true;
+                    }else if(matrix[2][2].equals("X")){
+                        matrix[0][2] = "O";
+                        button7.setText("O");
+                        OWins();
+                        return OWin = true;
+                    }
+                }else if(matrix[2][2].equals("X")){
+                    matrix[1][0] = "O";
+                    button4.setText("O");
+                    if(matrix[2][0].equals("X")){
+                        matrix[0][2] = "O";
+                        button3.setText("O");
+                        button6.setText("X");
+                        draw();
+                        return draw = true;
+                    }else if(matrix[1][2].equals("X")){
+                        matrix[0][2] = "O";
+                        button3.setText("O");
+                        button7.setText("X");
+                        draw();
+                        return draw = true;
+                    }else if(matrix[0][2].equals("X")){
+                        matrix[1][2] = "O";
+                        button6.setText("O");
+                        button7.setText("X");
+                        draw();
+                        return draw = true;
+                    }
+                }
+            }
+        } 
         return false;
     }
     
