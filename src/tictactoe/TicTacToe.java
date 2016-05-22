@@ -396,8 +396,47 @@ public class TicTacToe extends Application {
                         return draw = true;
                     }
                 }
+            }else if(matrix[1][2].equals("X")){
+                matrix[1][0] = "O";
+                button4.setText("O");
+                if(matrix[2][0].equals("X")){
+                    matrix[0][2] = "O";
+                    button3.setText("O");
+                    if(matrix[0][1].equals("X")){
+                        matrix[2][1] = "O";
+                        button8.setText("O");
+                        button9.setText("X");
+                        draw();
+                        return draw = true;
+                    }
+                }
+                inDev();
+            }else if(matrix[2][2].equals("X")){
+                inDev(); 
+            }else if(matrix[2][1].equals("X")){
+                 inDev();
+            }else if(matrix[2][0].equals("X")){
+                inDev();
+            }else if(matrix[1][0].equals("X")){
+                inDev();
             }
-        } 
+        }else if(matrix[0][0].equals("X")){
+            inDev();
+        }else if(matrix[0][1].equals("X")){
+            inDev();
+        }else if(matrix[0][2].equals("X")){
+            inDev();
+        }else if(matrix[1][0].equals("X")){
+            inDev();
+        }else if(matrix[1][2].equals("X")){
+            inDev();
+        }else if(matrix[2][0].equals("X")){
+            inDev();
+        }else if(matrix[2][1].equals("X")){
+            inDev();
+        }else if(matrix[2][2].equals("X")){
+            inDev();
+        }
         return false;
     }
     
@@ -793,5 +832,25 @@ public class TicTacToe extends Application {
                     }
                 }
         });
+    }
+    public static void inDev(){
+        alert.setContentText("In development! try another one=)");
+                Optional<ButtonType> result = alert.showAndWait();
+                if(result.get() == ButtonType.OK){
+                    for (int i = 0; i < 3; ++i)
+                        for (int j = 0; j < 3; ++j)
+                            matrix[i][j] = "";
+                    counter = 0;
+                    button1.setText("");
+                    button2.setText("");
+                    button3.setText("");
+                    button4.setText("");
+                    button5.setText("");
+                    button6.setText("");
+                    button7.setText("");
+                    button8.setText("");
+                    button9.setText("");
+                }else
+                    System.exit(0);
     }
 }
