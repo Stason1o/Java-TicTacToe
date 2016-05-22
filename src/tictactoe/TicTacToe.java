@@ -212,7 +212,7 @@ public class TicTacToe extends Application {
         return el1.equals(el2);
     }
     
-    public static void check(){// function of checking if either of players have won
+    public static boolean check(){// function of checking if either of players have won
         if(
             (compare(matrix[0][0],matrix[0][1]) && compare(matrix[0][0],matrix[0][2])) && compare(matrix[0][0],"X") ||
             (compare(matrix[1][0],matrix[1][1]) && compare(matrix[1][0],matrix[1][2])) && compare(matrix[1][0],"X") ||
@@ -224,8 +224,9 @@ public class TicTacToe extends Application {
                 
             (compare(matrix[1][1],matrix[0][0]) && compare(matrix[1][1],matrix[2][2])) && compare(matrix[1][1],"X") ||
             (compare(matrix[1][1],matrix[2][0]) && compare(matrix[1][1],matrix[0][2])) && compare(matrix[1][1],"X") ) {
-            XWin = true;
+            
             XWins();
+            return XWin = true;
             
         }
         
@@ -240,17 +241,20 @@ public class TicTacToe extends Application {
                 
             (compare(matrix[1][1],matrix[0][0]) && compare(matrix[1][1],matrix[2][2])) && compare(matrix[1][1],"O") ||
             (compare(matrix[1][1],matrix[2][0]) && compare(matrix[1][1],matrix[0][2])) && compare(matrix[1][1],"O") ){
-            OWin = true;
+            
             OWins();
+            return OWin = true;
             
         }
             
                  
         else
             if(counter == 9){
-                draw = true;
+                
                 draw();
+                return draw = true;
             }
+        return false;
     }
     
     public static boolean compCheck(){
@@ -273,8 +277,36 @@ public class TicTacToe extends Application {
                         draw();
                         return draw = true;
                         
-                    }else if()
-                }else if()
+                    }else if(matrix[2][1].equals("X")){
+                        matrix[0][1] = "O";
+                        button2.setText("O");
+                        button9.setText("X");
+                        draw();
+                        return draw = true;
+                    }else if(matrix[2][2].equals("X")){
+                        matrix[2][1] = "O";
+                        button8.setText("O");
+                        button2.setText("X");
+                        draw();
+                        return draw = true;
+                    }
+                }else if(matrix[0][1].equals("X")){
+                    matrix[1][0] = "O";
+                    button4.setText("O");
+                    OWins();
+                    return OWin = true;
+                }else if(matrix[1][2].equals("X")){
+                    matrix[0][1] = "O";
+                    button4.setText("O");
+                    OWins();
+                    return OWin = true;
+                }
+                else if(matrix[2][1].equals("X")){
+                    matrix[0][1] = "O";
+                    button4.setText("O");
+                    OWins();
+                    return OWin = true;
+                }
             } //else if()
             
         } //else if()
